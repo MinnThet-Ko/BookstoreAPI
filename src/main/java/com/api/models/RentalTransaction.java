@@ -5,6 +5,8 @@ import java.util.Set;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -23,6 +25,7 @@ import lombok.ToString;
 @Entity
 @Table(name = "rental_transaction")
 @ToString
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class RentalTransaction {
 	
 	@Id

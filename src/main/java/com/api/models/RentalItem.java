@@ -1,5 +1,7 @@
 package com.api.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -19,6 +21,7 @@ import lombok.ToString;
 @Entity
 @Table(name = "rental_item")
 @ToString
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class RentalItem {
 	@Id
 	@Column(name = "item_id")
